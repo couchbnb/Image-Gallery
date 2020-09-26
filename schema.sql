@@ -14,7 +14,7 @@ rating DECIMAL(5,2),
 is_super INT,
 is_liked INT,
 location VARCHAR(100),
-photo_set INT,
+photo_set INT(3) ZEROFILL,
 number_photo INT,
 PRIMARY KEY(id)
 );
