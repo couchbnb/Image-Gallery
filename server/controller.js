@@ -2,6 +2,7 @@ const model = require('./model.js');
 
 const getPageInfo = (req, res) => {
   const { id } = req.query;
+  console.log(req.query)
   model.getPageInfo(id, ((err, results) => {
     if (err) {
       console.log('we had an error ', err);
