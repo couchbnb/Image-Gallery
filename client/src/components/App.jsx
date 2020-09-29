@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+
 import LikeShare from './LikeShare.jsx';
 import Gallery from './Gallery.jsx';
 import helper from '../helper/helper.jsx';
@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      imageURL: [],
+      imageURL: [1,2,3,4,5],
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
@@ -43,6 +43,8 @@ class App extends React.Component {
   }
 
   render() {
+
+
     return (
       <div>
         <Gallery imageData={this.state.imageURL} />
