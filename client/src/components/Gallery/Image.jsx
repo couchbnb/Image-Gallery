@@ -7,7 +7,7 @@ function Image({URL}) {
 
   return (
 
-      <img src={URL} />
+      <img src={URL}  />
 
   );
 }

@@ -11,23 +11,20 @@ class GalleryContainer extends React.Component {
   }
 
   render() {
-    const imageRender = this.props.data.map((image, index) => {
-      if (index > 4) {
-        return;
-      }
-      if (index === 0) {
-        console.log('it happened');
-        return <div className={styles.container1}><Image URL={image} id={`img00${index}`} key={index} /></div>;
-      }
-      return <div><Image className={styles.container} URL={image} id={`img00${index}`} key={index} /></div>;
-    });
+
 
     return (
 
       <div className={styles.container}>
-
-        {imageRender}
-
+        <div className={styles.container1}>Box 1 <Image URL={this.props.data[0]} /></div>
+        <div className={styles.container2}>
+          <div className={styles.container3}>Box a<Image URL={this.props.data[1]} /></div>
+          <div className={styles.container3}>Box b<Image URL={this.props.data[2]} /></div>
+        </div>
+        <div className={styles.container2}>
+          <div className={styles.container3}>Box c<Image URL={this.props.data[3]} /></div>
+          <div className={styles.container3}>Box d<Image URL={this.props.data[4]} /></div>
+        </div>
       </div>
 
     );
