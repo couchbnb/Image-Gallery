@@ -1,17 +1,56 @@
 import React from 'react';
-import LikeShare from './LikeShare.jsx'
+import axios from 'axios';
+import styled from 'styled-components';
+import LikeShare from './LikeShare.jsx';
+import Gallery from './Gallery.jsx';
+import helper from '../helper/helper.jsx';
 
+console.log(helper.imageURLGen);
 
-function App() {
-  return (
-    <div>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      imageURL: [],
+    };
+    this.getData = this.getData.bind(this);
+    this.imageURLGen = this.imageURLGen.bind(this);
+  }
 
-    <LikeShare />
+  componentDidMount() {
+    this.getData();
+  }
 
+  getData() {
+    const id = window.location.pathname.match(/(\d+)/)[0];
+    axios.get(`/data/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        this.setState({ data: response.data });
+      })
+      .then(() => {
+        this.imageURLGen();
+      })
+      .catch((error) => {
+        console.log(error, 'we had an error on get request');
+      });
+  }
+
+  imageURLGen() {
+    helper.imageURLGen = helper.imageURLGen.bind(this);
+    helper.imageURLGen();
+  }
+
+  render() {
+    return (
+      <div>
+        <Gallery imageData={this.state.imageURL} />
+        <h1>test hi</h1>
       </div>
-  );
+
+    );
+  }
 }
 
 export default App;
-
-

@@ -2,10 +2,11 @@
   "name": "-y",
   "version": "1.0.0",
   "description": "My webpack project",
-  "main": "./client/dist/index.html",
+  "main": "server/index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack -d --watch"
+    "start": "webpack -d --watch",
+    "dev-server": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -38,9 +39,12 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "lodash": "^4.17.20",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
   }
 }
