@@ -38,10 +38,13 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
+    "identity-obj-proxy": "^3.0.0",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "babel-jest": "^26.3.0",
+    "jest-enzyme": "^7.1.2",
     "lodash": "^4.17.20",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",

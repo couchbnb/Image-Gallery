@@ -5,6 +5,7 @@ import LikeShare from './LikeShare.jsx';
 import Gallery from './Gallery.jsx';
 import helper from '../helper/helper.jsx';
 
+
 console.log(helper.imageURLGen);
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      imageURL: [1,2,3,4,5],
+      imageURL: [1, 2, 3, 4, 5],
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
