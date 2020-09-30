@@ -43,8 +43,6 @@ class App extends React.Component {
   }
 
   render() {
-
-
     return (
       <div>
         <Gallery imageData={this.state.imageURL} />
