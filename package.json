@@ -4,7 +4,7 @@
   "description": "My webpack project",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --collectCoverage",
     "start": "webpack -d --watch",
     "dev-server": "nodemon server/index.js"
   },

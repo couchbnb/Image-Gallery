@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1601538636908" clover="3.2.0">
+  <project timestamp="1601538636908" name="All files">
+    <metrics statements="22" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="9" elements="35" coveredelements="25" complexity="0" loc="22" ncloc="22" packages="2" files="5" classes="5"/>
+    <package name="components">
+      <metrics statements="17" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+      <file name="App.jsx" path="/Users/ryandecoster/Desktop/FEC 130/Image-Gallery/client/src/components/App.jsx">
+        <metrics statements="14" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="29" count="6" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+      </file>
+      <file name="Gallery.jsx" path="/Users/ryandecoster/Desktop/FEC 130/Image-Gallery/client/src/components/Gallery.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="LIkeShare.jsx" path="/Users/ryandecoster/Desktop/FEC 130/Image-Gallery/client/src/components/LIkeShare.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Gallery">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="GalleryContainer.jsx" path="/Users/ryandecoster/Desktop/FEC 130/Image-Gallery/client/src/components/Gallery/GalleryContainer.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+      </file>
+      <file name="Image.jsx" path="/Users/ryandecoster/Desktop/FEC 130/Image-Gallery/client/src/components/Gallery/Image.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="25" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
