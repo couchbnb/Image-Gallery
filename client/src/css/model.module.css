@@ -1,9 +1,8 @@
 .arrorwButton{
 
   display: flex;
-  position: absolute;
-  top: 50%;
-  /* ${direction === 'right' ? right: 25px` : `left: 25px`}; */
+
+  top: auto;
   height: 50px;
   width: 50px;
   justify-content: center;
@@ -12,37 +11,104 @@
   cursor: pointer;
   align-items: center;
   transition: transform ease-in 0.1s;
-  &:hover {
-    transform: scale(1.1);
-}
 }
 
 
-.galSlider >div{
-  text-decoration-color: greenyellow;
-  position: relative;
-  height: 100vh;
+
+.galSlider {
+  top: auto;
+  position: absolute;
+  background-color: greenyellow;
+  align-items: center;
+  position: absolute;
+  height: 90%vh;
   width: 100vw;
   margin: 0 auto;
   overflow: hidden;
+  justify-content: center;
+
+
 }
+.sliderContent {
+  height: 80%;
+  width: 80%;
+  background-color: rgb(2, 24, 122);
+  overflow: hidden;
 
-
-.SliderContent div>{
   /* styled.div`
   transform: translateX(-${props => props.translate}px);
   transition: transform ease-out ${props => props.transition}s; */
-  height: 100%;
+
   /* width: ${props => props.width}px; */
-  display: flex;
+  /* display: flex; */
 }
 
-.slide div>{
-  height: 100;
-  width: 100%;
+.slide {
+  height: 560px;
+  width: 90%;
+  background-color: rgb(196, 113, 230);
   /* background-image: url('${content}'); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+ /* display: flex; */
+  overflow: clip ;
+  justify-content: center;
 
+  flex-wrap: wrap;
+}
+
+.imageDisplay{
+object-fit: contain;
+height: 25 px;
+justify-content: center;
+translate: 0;
+transition: 1;
+
+}
+
+.imageHide {
+  height: 0%;
+  display:none;
+  background-color: darkgoldenrod;
+
+}
+
+
+.arrow {
+
+ fill: transparent;
+height: 12px;
+ width: 12px;
+  stroke: currentcolor;
+   stroke-width: 2.33333;
+    overflow: wrap;
+
+    appearance: none !important;
+    display: flex !important;
+    border-radius: 50% !important;
+    border: none !important;
+    outline: none !important;
+    margin: 0  !important;
+    padding: 0 !important;
+    color: rgb(34, 34, 34) !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    position: relative !important;
+    background: white !important;
+    transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+    -webkit-box-sizing: border-box;
+}
+
+
+
+.arrowContainer  .arrow{
+  content: "" !important;
+  display: block !important;
+  /* position: absolute !important; */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(176, 176, 176) !important;
 }

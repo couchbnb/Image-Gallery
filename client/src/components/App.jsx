@@ -45,10 +45,11 @@ class App extends React.Component {
   }
 
   render() {
+    const{data,imageURL} =this.state
     return (
       <div>
         {/* <Gallery imageData={this.state.imageURL} /> */}
-        <GalSlider />
+        <GalSlider images={imageURL} />
 
       </div>
 
