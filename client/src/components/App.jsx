@@ -23,8 +23,9 @@ class App extends React.Component {
     this.getData();
   }
 
-  getData() {
-    const id = window.location.pathname.match(/(\d+)/)[0];
+  getData(id) {
+    // need to refactor here
+    // const id = window.location.pathname.match(/(\d+)/)[0] ?  1;
     axios.get(`/data/${id}`)
       .then((response) => {
         console.log(response.data);
@@ -47,7 +48,7 @@ class App extends React.Component {
     return (
       <div>
         <Gallery imageData={this.state.imageURL} />
-        <h1>test hi</h1>
+
       </div>
 
     );
