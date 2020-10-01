@@ -4,6 +4,7 @@ import axios from 'axios';
 import LikeShare from './LikeShare.jsx';
 import Gallery from './Gallery.jsx';
 import helper from '../helper/helper.jsx';
+import GalSlider from './Modal/GalSlider.jsx'
 
 
 console.log(helper.imageURLGen);
@@ -46,8 +47,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Gallery imageData={this.state.imageURL} />
-        <h1>test hi</h1>
+        {/* <Gallery imageData={this.state.imageURL} /> */}
+        <GalSlider />
+
       </div>
 
     );
