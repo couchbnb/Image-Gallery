@@ -3,53 +3,40 @@
   .container{
 
     display: flex;
-    background-color: grey;
+    /* background-color: grey; */
     justify-content: flex-start;
-    padding: 8px;
-    margin: 8px;
-    border-style: dotted;
-    flex-wrap:wrap;
-    position: absolute;
+    overflow: hidden;
     width: 1303px;
-    flex: fit-content;
+    flex: 0 1 auto;
+    min-width: 0px;
+
+
+
   }
   div{
     display: flex;
-    justify-content: flex-start;
-    border: 1px red;
-
+    justify-content: flex-end;
+      overflow: hidden;
   }
   .container1 {
-    border-style: dotted;
-    background-color: white;
-    flex-basis: 560px;
-    flex: 2 1 auto
+    flex: 2 1 auto;
      }
 
 
  .container2{
-   flex-direction: column;
-  border-style: dotted;
-  background-color: blue;
-
-  flex-basis: 80%;
-  flex: 1 1 auto
-
+  flex-direction: column;
+  flex: 1 2
  }
   .container3{
-    height :250px;
-  border-style: dotted;
-  background-color: grey;
 
-  flex-basis: 80%;
-  flex: 1 2 auto
+  flex: 1 2
   }
 img{
   width : 20px;
-  padding: .4rem;
-  flex: 1 1 auto;
-
-  object-fit: cover
+  margin: 4px;
+  flex: 1 2 auto;
+  object-fit: cover;
+  cursor: pointer;
 
 }
 

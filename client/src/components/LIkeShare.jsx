@@ -1,11 +1,9 @@
 import React from 'react';
 
-console.log('hi from share like');
 
 function LikeShare() {
   return (
     <div>
-      <h1>Hello From like share </h1>
 
       <div className="share">
         <span>
@@ -15,6 +13,8 @@ function LikeShare() {
         </span>
         Share
       </div>
+
+
       <div className="save">
         <span>
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" display="block" fill="none" style={{ height: '16px', width: '16px', fill: 'rgb(255, 56, 92)' }} stroke="currentcolor" strokeWidth="2" overflow="visible">
