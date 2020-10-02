@@ -48,8 +48,8 @@ class App extends React.Component {
     const{data,imageURL} =this.state
     return (
       <div>
-        {/* <Gallery imageData={this.state.imageURL} /> */}
-        <GalSlider images={imageURL} />
+        <Gallery imageData={this.state.imageURL} />
+        {/* <GalSlider images={imageURL} /> */}
 
       </div>
 
