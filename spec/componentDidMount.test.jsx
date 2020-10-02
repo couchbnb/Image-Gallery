@@ -49,7 +49,11 @@ describe('Client', () => {
 
       it('should check `componentDidMount()` and invoke getData once', () => {
         const wrapper = shallow(<App />);
-        const instance = wrapper.instance(); // you assign your instance of the wrapper
+        const instance = wrapper.instance();
+        const axios = {
+          get: jest.fn(() => Promise.resolve({ data: {} }))
+        };
+        // you assign your instance of the wrapper
         jest.spyOn(instance, 'getData')
         jest.spyOn(instance, 'componentDidMount'); // You spy on func
         instance.componentDidMount();
