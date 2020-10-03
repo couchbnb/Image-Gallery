@@ -56,6 +56,14 @@ console.log(copy,"copy")
   return JSON.stringify(copy);
 };
 
+// rating generator
+
+const ratingGen = function() {
+var precision = 100; // 2 decimals
+var randomnum = Math.floor(Math.random() * (5 * precision - 1 * precision) + 2 * precision) / (1*precision);
+return randomnum
+}
+
 // seeding function takes in "seed" as an argument for the number of amount of records created.
 const seeder = (seed) => {
   for (let i = 0; i < seed; i += 1) {
@@ -72,8 +80,8 @@ const seeder = (seed) => {
   }
 };
 
-seeder(1000);
+// seeder(1000);
 
-// console.log(photoSetGen())
+ratingGen
 
-for (var i = 0; i < 30; i++){console.log(description())}
+for (var i = 0; i < 30; i++){console.log(ratingGen())}
