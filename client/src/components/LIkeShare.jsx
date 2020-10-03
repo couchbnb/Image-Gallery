@@ -22,7 +22,7 @@ const LikeFrame = styled.div`
 
  svg{
 
-   fill :${(props) =>  props.isLiked? "rgb(255, 56, 92)" : "rgb(53,50,204)"};
+   fill :${(props) =>  props.isLiked? "none" : "#ff385c" };
  }
 `;
 
