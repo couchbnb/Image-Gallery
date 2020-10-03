@@ -10,12 +10,9 @@
     flex: 0 1 auto;
     min-width: 0px;
 
-
-
   }
   div{
     display: flex;
-    justify-content: flex-end;
       overflow: hidden;
   }
   .container1 {
@@ -32,8 +29,9 @@
   flex: 1 2
   }
 img{
-  width : 20px;
+  width : 25px;
   margin: 4px;
+  height: auto;
   flex: 1 2 auto;
   object-fit: cover;
   cursor: pointer;
