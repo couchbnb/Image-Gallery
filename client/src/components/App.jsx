@@ -31,7 +31,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: [{id: 15,
+        is_liked: 1,
+        is_super: 1,
+        location: "",
+        name: "Bobs place",
+        number_photo: "[1]",
+        photo_set: 6,
+        rating: 2
+      }],
       imageURL: [1, 2, 3, 4, 5],
     };
     this.getData = this.getData.bind(this);
@@ -64,21 +72,23 @@ class App extends React.Component {
   }
 
   render() {
+    const {data} = this.state;
+    console.log(data,"data ata ata")
     return (
 
-      <div>
+
 
       <GlobalDiv>
 
-        {/* <Header /> */}
+
         <span></span><div> <Rug /></div>
-<p></p>
-<Header/>
-<p></p>
+
+          <Header data={data}/>
+
         <Gallery imageData={this.state.imageURL} />
 
       </GlobalDiv>
-      </div>
+
     );
   }
 }
