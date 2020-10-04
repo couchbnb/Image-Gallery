@@ -22,6 +22,13 @@ background-color: #ffffff;
 font-family: "Times New Roman", Times, serif;
 position: relative;
 z-index: 5;
+font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 `
