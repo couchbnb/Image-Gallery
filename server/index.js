@@ -8,9 +8,6 @@ const controller = require('./controller.js');
 
 app.use(express.json());
 
-
-
-
 app.use('/listing/:id', express.static(path.join(__dirname, '../client/dist')));
 
 // modle

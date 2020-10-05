@@ -54,7 +54,11 @@ class App extends React.Component {
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
+<<<<<<< HEAD
     this.toggleModal = this.toggleModal.bind(this);
+=======
+    this.updateLike = this.updateLike.bind(this);
+>>>>>>> master
   }
 
 toggleModal(){
@@ -83,6 +87,20 @@ toggleModal(){
       });
   }
 
+  updateLike() {
+    alert("I was clicked")
+    let boolNum = this.state.is_liked;
+    let id = this.state.id;
+    if( boolNum === 0) {
+      this.setState({ is_liked : 1});
+    } else {
+      this.setState({ is_liked : 0});
+    }
+    // var params = [id, boolNum]
+    // axios.get('/updateLike')
+componentDidUpdate
+  }
+
   imageURLGen() {
     helper.imageURLGen = helper.imageURLGen.bind(this);
     helper.imageURLGen();
@@ -91,6 +109,7 @@ toggleModal(){
   render() {
     const {data} = this.state;
     console.log(data,"data ata ata")
+<<<<<<< HEAD
 
     const modal = this.state.showModal ? (
       <Modal>
@@ -99,6 +118,9 @@ toggleModal(){
     ) : null;
 
 
+=======
+    const updateLike = this.updateLike;
+>>>>>>> master
     return (
 
 
@@ -108,7 +130,7 @@ toggleModal(){
 
         <span></span><div> <Rug /></div>
 
-          <Header data={data}/>
+          <Header data={data} updateLike={updateLike}/>
 
         <Gallery imageData={this.state.imageURL} />
 
