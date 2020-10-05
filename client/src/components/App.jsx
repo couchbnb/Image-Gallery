@@ -54,11 +54,8 @@ class App extends React.Component {
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
-<<<<<<< HEAD
     this.toggleModal = this.toggleModal.bind(this);
-=======
     this.updateLike = this.updateLike.bind(this);
->>>>>>> master
   }
 
 toggleModal(){
@@ -109,7 +106,6 @@ componentDidUpdate
   render() {
     const {data} = this.state;
     console.log(data,"data ata ata")
-<<<<<<< HEAD
 
     const modal = this.state.showModal ? (
       <Modal>
@@ -118,9 +114,6 @@ componentDidUpdate
     ) : null;
 
 
-=======
-    const updateLike = this.updateLike;
->>>>>>> master
     return (
 
 
@@ -130,7 +123,7 @@ componentDidUpdate
 
         <span></span><div> <Rug /></div>
 
-          <Header data={data} updateLike={updateLike}/>
+          <Header data={data} updateLike={this.updateLike}/>
 
         <Gallery imageData={this.state.imageURL} />
 
