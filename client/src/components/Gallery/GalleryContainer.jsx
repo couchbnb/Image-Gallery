@@ -75,6 +75,26 @@ transition: all .5s ease;
    filter: brightness(78%);
 	}
 `;
+const ShowAllBttn = styled.button `
+font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+font-weight: 450;
+line-height:18px;
+border: 1px solid black;
+  top: 70%;
+ right: 10%;
+
+
+  font-size: 14px;
+  padding: 7px 15px;
+
+  cursor: pointer;
+  border-radius: 8px;
+  position: absolute;
+  width: 135px;
+  height:33px;
+  -webkit-font-smoothing: antialiased;
+}
+`
 
 class GalleryContainer extends React.Component {
   constructor(props) {
@@ -100,7 +120,8 @@ class GalleryContainer extends React.Component {
         </div>
         <div className={styles.container2}>
           <div className={styles.container3}><Image4 src={data[3]} /></div>
-          <div className={styles.container3}><Image5 src={data[4]} /></div>
+          <div className={styles.container3}><Image5 src={data[4]} /><ShowAllBttn>Show all photos</ShowAllBttn></div>
+
         </div>
 
       </Container>

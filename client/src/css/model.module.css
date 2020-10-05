@@ -1,0 +1,108 @@
+
+
+.arrorwButton{
+
+  display: flex;
+
+  top: auto;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+}
+
+
+
+.galSlider {
+
+
+  background-color: greenyellow;
+  align-items: center;
+  height: 800px;
+  width: 580px;
+  margin: 0 auto;
+
+  justify-content: center;
+
+
+}
+.sliderContent {
+  height: 95%;
+  width: 95%;
+  background-color: rgb(2, 24, 122);
+
+}
+
+.slide {
+  height: 560px;
+  width: 90%;
+  background-color: rgb(196, 113, 230);
+  /* background-image: url('${content}'); */
+ /* display: flex; */
+  overflow: clip ;
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.imageDisplay{
+  object-fit: contain;
+
+justify-content: center;
+translate: 0;
+transition: 1;
+
+}
+
+.imageHide {
+  height: 0%;
+  display:none;
+  background-color: darkgoldenrod;
+
+}
+
+
+.arrow {
+
+ fill: tra;
+height: 12px;
+ width: 12px;
+  stroke: currentcolor;
+   stroke-width: 2.33333;
+    overflow: wrap;
+
+    appearance: none !important;
+    display: flex !important;
+    border-radius: 50% !important;
+    border: none !important;
+    outline: none !important;
+    margin: 0  !important;
+    padding: 0 !important;
+    color: rgb(34, 34, 34) !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    position: relative !important;
+    background: white !important;
+    transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
+    -webkit-box-sizing: border-box;
+}
+
+
+
+.arrowContainer  .arrow{
+  content: "" !important;
+  display: block !important;
+  /* position: absolute !important; */
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(176, 176, 176) !important;
+}
