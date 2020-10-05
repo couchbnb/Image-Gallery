@@ -27,16 +27,17 @@ const HeaderWrapper = styled.div`
 width: 1280px;
 display: grid;
 overflow: visible!important!;
+flex-wrap: nowrap !important!;
 
 grid-gap:8px;
-grid-template-columns: 200px 260px auto auto 150px;
+grid-template-columns: 230px auto auto auto auto 150px;
 grid-template-rows: 60px 60px;
-  grid-template-areas:  "title title title . ."
-                        "rating location . . likeShare";
+  grid-template-areas:  "title title title . . ."
+                        "rating location . . .likeShare";
                         align-items: center;
 `;
 
-function Header({ data }) {
+function Header({ data, updateLike }) {
   const { location } = data[0];
   const city = location.split(',')[0];
   const { name } = data[0];
@@ -62,7 +63,7 @@ function Header({ data }) {
           <span><span><a href="https://airbnb.com/s/San%20Francisco,California,United%20States/homes">{location}</a></span></span>
         </LocationWrapper>
         <LikeWrapper>
-          <LikeShare isLiked={isLiked} />
+          <LikeShare isLiked={isLiked} updateLike ={updateLike} />
         </LikeWrapper>
       </HeaderWrapper>
     </div>

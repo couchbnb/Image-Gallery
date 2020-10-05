@@ -2,11 +2,12 @@ import React from 'react';
 
 import GalleryContainer from './Gallery/GalleryContainer.jsx';
 
-function Gallery(props) {
+function Gallery({imageData}) {
+
   return (
 
     <div>
-      <GalleryContainer data={props.imageData} />
+      <GalleryContainer data={imageData} />
     </div>
 
   );
