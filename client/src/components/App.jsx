@@ -6,6 +6,8 @@ import Gallery from './Gallery.jsx';
 import helper from '../helper/helper.jsx';
 import styled from 'styled-components';
 import Header from './Header.jsx'
+import GalSlider from './Modal/GalSlider.jsx'
+import Modal from './Modal/Modal.jsx'
 
 const Rug = styled.div`
 height: 71px !important;
@@ -38,20 +40,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [{id: 15,
-        is_liked: 1,
-        is_super: 1,
+      data: [{id: 0,
+        is_liked: 0,
+        is_super: 0,
         location: "",
-        name: "Bobs place",
+        name: "",
         number_photo: "[1]",
-        photo_set: 6,
-        rating: 2
+        photo_set: 1,
+        rating: 1
       }],
       imageURL: [1, 2, 3, 4, 5],
+      showModal: false,
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
+
+toggleModal(){
+  this.setState({showModal:!this.state.showModal})
+}
+
+
 
   componentDidMount() {
     this.getData();
@@ -81,6 +91,14 @@ class App extends React.Component {
   render() {
     const {data} = this.state;
     console.log(data,"data ata ata")
+
+    const modal = this.state.showModal ? (
+      <Modal>
+        <GalSlider images = {this.state.imageURL}/>
+      </Modal>
+    ) : null;
+
+
     return (
 
 
@@ -94,6 +112,9 @@ class App extends React.Component {
 
         <Gallery imageData={this.state.imageURL} />
 
+
+        {/* {modal}
+        <button onClick={this.toggleModal}> MODAL BUTTON!!!!!!</button> */}
       </GlobalDiv>
 
     );
