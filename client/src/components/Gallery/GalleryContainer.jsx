@@ -1,7 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 import styles from '../../css/container.module.css';
 import LikeShare from '../LikeShare.jsx';
-import styled from 'styled-components';
+
+const Container = styled.div`
+ display: flex;
+    /* background-color: grey; */
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: 1303px;
+    flex: 0 1 auto;
+    min-width: 500px;
+    max-height: 540px;
+    min-height: 250px
+
+`;
 
 const Image1 = styled.img`
 
@@ -71,18 +85,14 @@ class GalleryContainer extends React.Component {
   }
 
   render() {
-
-
-    const { data } = this.props
+    const { data } = this.props;
     return (
 
+      <Container>
 
-
-
-      <div className={styles.container}>
         {/* <LikeShare /> */}
 
-        <div className={styles.container1} ><Image1 src={data[0]} /></div>
+        <div className={styles.container1}><Image1 src={data[0]} /></div>
 
         <div className={styles.container2}>
           <div className={styles.container3}><Image2 src={data[1]} /></div>
@@ -92,8 +102,8 @@ class GalleryContainer extends React.Component {
           <div className={styles.container3}><Image4 src={data[3]} /></div>
           <div className={styles.container3}><Image5 src={data[4]} /></div>
         </div>
-      </div>
 
+      </Container>
     );
   }
 }
