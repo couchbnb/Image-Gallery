@@ -43,11 +43,12 @@ grid-template-rows: 50px 40px;
                         align-items: center;
 `;
 
-function Header({ data, updateLike }) {
+function Header({ data, updateLike, isSuperHost}) {
   const { location } = data[0];
   const city = location.split(',')[0];
   const { name } = data[0];
-  const isLiked = data[0].is_liked;
+  const isLiked = isSuperHost
+
 
   return (
 

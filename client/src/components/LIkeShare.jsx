@@ -33,7 +33,7 @@ const LikeFrame = styled.div`
 
 function LikeShare(props) {
   const { isLiked } = props;
-  console.log(isLiked, 'LikeShare');
+  console.log(isLiked, 'LikeShare in like share!!');
 
   return (
     <div>
