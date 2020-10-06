@@ -60,17 +60,17 @@ console.log(copy,"copy")
 
 const ratingGen = function() {
 var precision = 100; // 2 decimals
-var randomnum = Math.floor(Math.random() * (5 * precision - 1 * precision) + 2 * precision) / (1*precision);
+var randomnum = Math.floor(Math.random() * (4 * precision - 1 * precision) + 2 * precision) / (1*precision);
 return randomnum
 }
 
 // seeding function takes in "seed" as an argument for the number of amount of records created.
 const seeder = (seed) => {
   for (let i = 0; i < seed; i += 1) {
-    const param = [null, description(), faker.random.number({ min: 1, max: 5 }), faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 6 }), photoSetGen()];
+    const param = [null, description(), ratingGen(), faker.random.number({ min: 1, max: 150 }) ,faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 6 }), photoSetGen()];
     console.log(param, typeof faker.random.number());
 
-    connection.query('INSERT INTO gallery VALUES (?,?,?,?,?,?,?,?)', param, (err, sucsess) => {
+    connection.query('INSERT INTO gallery VALUES (?,?,?,?,?,?,?,?,?)', param, (err, sucsess) => {
       if (err) {
         console.log('we had an error :', err);
       } else {
@@ -80,7 +80,7 @@ const seeder = (seed) => {
   }
 };
 
-// seeder(1000);
+seeder(100);
 
 ratingGen
 
