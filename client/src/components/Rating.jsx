@@ -44,14 +44,16 @@ const SuperHostWrapper = styled.div`
 
 function Rating({ data }) {
   const isSuper = data[0].is_super;
-  console.log('isSuper', isSuper);
+  const reviews = data[0].reviews;
+  const rating = data[0].rating;
+  console.log('isSuper', isSuper, data, "myadaadadada");
 
   return (
     <div>
       <Star >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-        <b>4.6 </b>
-        <a>(20)</a>
+        <b>{rating}</b>
+        <a>({reviews})</a>
         <span>.</span>
 
       </Star>
