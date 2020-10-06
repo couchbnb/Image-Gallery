@@ -11,6 +11,7 @@ CREATE TABLE gallery (
 id int not null AUTO_INCREMENT,
 name VARCHAR(50),
 rating DECIMAL(5,2),
+reviews INT,
 is_super INT,
 is_liked INT,
 location VARCHAR(100),

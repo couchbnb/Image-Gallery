@@ -5,19 +5,23 @@ import Rating from './Rating.jsx';
 
 const Title = styled.div`
 grid-area: title;
+font-size: 26px !important!;
+line-height:30px!important!;
+text-align:start!important!;
+font-weight: normal !important!;
+padding: 0 !important!;
 `;
+
 const RatingWrapper = styled.div`
 grid-area: rating;
+color: #717171;
 
-`;
+span{
+  margin: 4px ;
+  a, a:visited {
+    color:  #717171;
+  };
 
-const LocationWrapper = styled.div`
-grid-area: location;
-display: flex;
-flex-wrap: nowrap;
-a, a:visited {
-    color: inherit;
-}
 `;
 
 const LikeWrapper = styled.div`
@@ -28,20 +32,23 @@ width: 1280px;
 display: grid;
 overflow: visible!important!;
 flex-wrap: nowrap !important!;
+padding: 0px !important!;
+margin:0px !important;
 
-grid-gap:8px;
-grid-template-columns: 230px auto auto auto auto 150px;
-grid-template-rows: 60px 60px;
+grid-gap:0px;
+grid-template-columns: auto auto auto auto auto 150px;
+grid-template-rows: 50px 40px;
   grid-template-areas:  "title title title . . ."
-                        "rating location . . .likeShare";
+                        "rating . . . .likeShare";
                         align-items: center;
 `;
 
-function Header({ data, updateLike }) {
+function Header({ data, updateLike, isSuperHost}) {
   const { location } = data[0];
   const city = location.split(',')[0];
   const { name } = data[0];
-  const isLiked = data[0].is_liked;
+  const isLiked = isSuperHost
+
 
   return (
 
@@ -56,12 +63,10 @@ function Header({ data, updateLike }) {
           </div>
         </Title>
 
-        <RatingWrapper>
-          <Rating data={data} />
+        <RatingWrapper data={location}>
+          <Rating data={data}/>
+          <span><a href="https://airbnb.com/s/San%20Francisco,California,United%20States/homes"><b>{location}</b></a></span>
         </RatingWrapper>
-        <LocationWrapper data={location}>
-          <span><span><a href="https://airbnb.com/s/San%20Francisco,California,United%20States/homes">{location}</a></span></span>
-        </LocationWrapper>
         <LikeWrapper>
           <LikeShare isLiked={isLiked} updateLike ={updateLike} />
         </LikeWrapper>

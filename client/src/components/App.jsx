@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
+import styled from 'styled-components';
 import LikeShare from './LikeShare.jsx';
 import Gallery from './Gallery.jsx';
 import helper from '../helper/helper.jsx';
-import styled from 'styled-components';
-import Header from './Header.jsx'
-import GalSlider from './Modal/GalSlider.jsx'
-import Modal from './Modal/Modal.jsx'
+import Header from './Header.jsx';
+import GalSlider from './Modal/GalSlider.jsx';
+import Modal from './Modal/Modal.jsx';
 
 const Rug = styled.div`
 height: 71px !important;
@@ -15,7 +15,7 @@ width: 1180px!important;
 display:flex
 justify-content:center;
 background-image: url("rug.png");
-`
+`;
 
 const GlobalDiv = styled.div`
 
@@ -33,39 +33,38 @@ font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue
     -webkit-font-smoothing: antialiased;
 }
 
-`
+`;
 console.log(helper.imageURLGen);
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [{id: 0,
+      data: [{
+        id: 0,
         is_liked: 0,
         is_super: 0,
-        location: "",
-        name: "",
-        number_photo: "[1]",
+        location: '',
+        name: '',
+        number_photo: '[1]',
         photo_set: 1,
-        rating: 1
+        rating: 1,
       }],
       imageURL: [1, 2, 3, 4, 5],
       showModal: false,
+      isSuperHost: 0,
+      listingId: 0,
     };
     this.getData = this.getData.bind(this);
     this.imageURLGen = this.imageURLGen.bind(this);
-<<<<<<< HEAD
     this.toggleModal = this.toggleModal.bind(this);
-=======
     this.updateLike = this.updateLike.bind(this);
->>>>>>> master
+    this.submitUpdate = this.submitUpdate.bind(this);
   }
 
-toggleModal(){
-  this.setState({showModal:!this.state.showModal})
-}
-
-
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
 
   componentDidMount() {
     this.getData();
@@ -81,6 +80,10 @@ toggleModal(){
       })
       .then(() => {
         this.imageURLGen();
+        this.setState({
+          isSuperHost: this.state.data[0].is_super,
+          listingId: this.state.data[0].id,
+        });
       })
       .catch((error) => {
         console.log(error, 'we had an error on get request');
@@ -88,17 +91,27 @@ toggleModal(){
   }
 
   updateLike() {
-    alert("I was clicked")
-    let boolNum = this.state.is_liked;
-    let id = this.state.id;
-    if( boolNum === 0) {
-      this.setState({ is_liked : 1});
+    const boolNum = this.state.isSuperHost;
+    const { id } = this.state;
+    if (boolNum === 0) {
+      this.setState({ isSuperHost: 1 });
+      this.submitUpdate({ id: this.state.listingId, is_liked: 1 });
     } else {
-      this.setState({ is_liked : 0});
+      this.setState({ isSuperHost: 0 });
+      this.submitUpdate({ id: this.state.listingId, is_liked: 0 });
     }
     // var params = [id, boolNum]
     // axios.get('/updateLike')
-componentDidUpdate
+  }
+
+  submitUpdate(params) {
+    axios.patch('/data/update', params)
+      .then((results) => {
+        console.log(results);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   imageURLGen() {
@@ -107,33 +120,27 @@ componentDidUpdate
   }
 
   render() {
-    const {data} = this.state;
-    console.log(data,"data ata ata")
-<<<<<<< HEAD
+    const { data, isSuperHost } = this.state;
 
     const modal = this.state.showModal ? (
       <Modal>
-        <GalSlider images = {this.state.imageURL}/>
+        <GalSlider images={this.state.imageURL} />
       </Modal>
     ) : null;
 
-
-=======
-    const updateLike = this.updateLike;
->>>>>>> master
     return (
-
-
 
       <GlobalDiv>
 
+        <span />
+        <div>
+          {' '}
+          <Rug />
+        </div>
 
-        <span></span><div> <Rug /></div>
-
-          <Header data={data} updateLike={updateLike}/>
+        <Header data={data} isSuperHost={isSuperHost} updateLike={this.updateLike} />
 
         <Gallery imageData={this.state.imageURL} />
-
 
         {/* {modal}
         <button onClick={this.toggleModal}> MODAL BUTTON!!!!!!</button> */}
