@@ -34,7 +34,6 @@ font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue
 }
 
 `;
-console.log(helper.imageURLGen);
 
 class App extends React.Component {
   constructor(props) {

@@ -46,7 +46,7 @@ function Rating({ data }) {
   const isSuper = data[0].is_super;
   const reviews = data[0].reviews;
   const rating = data[0].rating;
-  console.log('isSuper', isSuper, data, "myadaadadada");
+
 
   return (
     <div>

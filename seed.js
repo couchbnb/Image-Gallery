@@ -19,21 +19,19 @@ const address = () => {
 
 // property description generator
 
-const description= () =>{
-
-var description = ["Romantic","Beach Side","Sunny","Modern","Privet","Cozy","Secluded"]
-var mid = ["Two Bedroom","Fully Loaded", "Custom Design","Entire","","Rustic","Country",""]
-var type = ["Guest House", "Loft", "Getaway", "Tree House","Town House", "Cabin", "Garden Retreate", "Unique Stay","Hacker House"]
-var end =["close to Downtown","", "With Privet Entrance", "", "","Near Attractions","", ""]
-return `${description[faker.random.number(6)]} ${mid[faker.random.number(7)]} ${type[faker.random.number(8)]} ${end[faker.random.number(7)]}`
-
-}
+const description = () => {
+  const description = ['Romantic', 'Beach Side', 'Sunny', 'Modern', 'Privet', 'Cozy', 'Secluded'];
+  const mid = ['Two Bedroom', 'Fully Loaded', 'Custom Design', 'Entire', '', 'Rustic', 'Country', ''];
+  const type = ['Guest House', 'Loft', 'Getaway', 'Tree House', 'Town House', 'Cabin', 'Garden Retreate', 'Unique Stay', 'Hacker House'];
+  const end = ['close to Downtown', '', 'With Privet Entrance', '', '', 'Near Attractions', '', ''];
+  return `${description[faker.random.number(6)]} ${mid[faker.random.number(7)]} ${type[faker.random.number(8)]} ${end[faker.random.number(7)]}`;
+};
 
 // Random secquental number array generator and shuffle.
 
 const photoSetGen = function () {
   const orderArray = [];
-  let max = faker.random.number({ min: 7, max: 15 });
+  const max = faker.random.number({ min: 7, max: 15 });
 
   for (let i = 0; i <= max; i += 1) {
     orderArray.push(i);
@@ -43,32 +41,29 @@ const photoSetGen = function () {
   const copy = orderArray.slice();
 
   const min = 0;
-console.log(copy,"copy")
 
   copy.forEach((number, index) => {
     const randomNum = Math.floor((Math.random() * (max - min + 1)));
-    var current = copy[index]
-    var ranInt = copy[randomNum]
+    const current = copy[index];
+    const ranInt = copy[randomNum];
     copy[index] = ranInt;
     copy[randomNum] = current;
-
   });
   return JSON.stringify(copy);
 };
 
 // rating generator
 
-const ratingGen = function() {
-var precision = 100; // 2 decimals
-var randomnum = Math.floor(Math.random() * (4 * precision - 1 * precision) + 2 * precision) / (1*precision);
-return randomnum
-}
+const ratingGen = function () {
+  const precision = 100; // 2 decimals
+  const randomnum = Math.floor(Math.random() * (4 * precision - 1 * precision) + 2 * precision) / (1 * precision);
+  return randomnum;
+};
 
 // seeding function takes in "seed" as an argument for the number of amount of records created.
 const seeder = (seed) => {
   for (let i = 0; i < seed; i += 1) {
-    const param = [null, description(), ratingGen(), faker.random.number({ min: 1, max: 150 }) ,faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 6 }), photoSetGen()];
-    console.log(param, typeof faker.random.number());
+    const param = [null, description(), ratingGen(), faker.random.number({ min: 1, max: 150 }), faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 6 }), photoSetGen()];
 
     connection.query('INSERT INTO gallery VALUES (?,?,?,?,?,?,?,?,?)', param, (err, sucsess) => {
       if (err) {
@@ -81,7 +76,3 @@ const seeder = (seed) => {
 };
 
 seeder(100);
-
-ratingGen
-
-for (var i = 0; i < 30; i++){console.log(ratingGen())}

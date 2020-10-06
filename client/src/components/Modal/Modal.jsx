@@ -1,10 +1,8 @@
 import React from 'react';
-
-import styles from '../../css/model.module.css'
-
 import ReactDOM from 'react-dom';
+import styles from '../../css/model.module.css';
 
-const modalRoot = document.getElementById('modal');
+const modalRoot = document.getElementById('modalGallery');
 
 class Modal extends React.Component {
   constructor(props) {
@@ -22,7 +20,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    let{children}=this.props;
+    const { children } = this.props;
     return ReactDOM.createPortal(
 
       children,
