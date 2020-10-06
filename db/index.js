@@ -13,10 +13,5 @@ connection.connect((err, sucsess) => {
     console.log('connected to DB', sucsess);
   }
 });
-// test connection and querry
-// connection.query('SELECT * from gallery where id = 1', (error, results) => {
-//   if (error) throw error;
-//   console.log('The test : ', results);
-// });
 
 module.exports = connection;

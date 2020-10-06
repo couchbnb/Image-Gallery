@@ -44,17 +44,15 @@ class GalSlider extends React.Component {
   }
 
   incromentCounter(event) {
-    console.log("I was clicked!")
     event.preventDefault();
-    let { currentSlide } = this.state;
-    this.setState({currentSlide :(currentSlide +1)});
+    const { currentSlide } = this.state;
+    this.setState({ currentSlide: (currentSlide +1)});
   }
 
   decromentCounter(event) {
-    console.log("I was clicked!")
     event.preventDefault();
     let { currentSlide } = this.state;
-    this.setState({currentSlide : (currentSlide -1)});
+    this.setState({currentSlide: (currentSlide -1)});
   }
 
   render() {
