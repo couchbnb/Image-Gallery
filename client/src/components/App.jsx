@@ -71,7 +71,17 @@ class App extends React.Component {
 
   getData() {
     // need to refactor here
+
+    // TO USE QUERY PARAMS - here we can create a queryParam object that will obtain our query object
+    // original:
     const id = window.location.pathname.match(/(\d+)/)[0];
+
+    // replace with
+    /*
+    let urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('listing_id');
+    */
+
     axios.get(`/data/${id}`)
       .then((response) => {
         console.log(response.data);
