@@ -5,6 +5,7 @@ import Rating from './Rating.jsx';
 
 const Title = styled.div`
 grid-area: title;
+display:flex;
 font-size: 26px !important!;
 line-height:30px!important!;
 text-align:start!important!;
@@ -32,11 +33,11 @@ width: 1280px;
 display: grid;
 overflow: visible!important!;
 flex-wrap: nowrap !important!;
-padding: 0px !important!;
-margin:0px !important;
+
+margin:30px !important;
 
 grid-gap:0px;
-grid-template-columns: auto auto auto auto auto 150px;
+grid-template-columns: auto auto auto auto auto 20px;
 grid-template-rows: 50px 40px;
   grid-template-areas:  "title title title . . ."
                         "rating . . . .likeShare";

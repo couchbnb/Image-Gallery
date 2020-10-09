@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-display: flex;
-
+display:flex;
+justify-content:start;
   background-color: white;
   color: black;
   border-radius: 12px;
-
+  overflow:visible
   flex-wrap: nowrap;
   border:  solid white;
   transition: all .5s ease;
@@ -26,7 +26,9 @@ display: flex;
 const LikeFrame = styled.div`
 
  svg{
-
+   position: relative;
+    display:flex;
+  flex-direction: row;
    fill :${(props) => (props.isLiked ? 'none' : '#ff385c')};
  }
 `;

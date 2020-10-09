@@ -32,8 +32,9 @@ overflow: visible;
 
 const SuperHostWrapper = styled.div`
 
-
-  text-allign: center;
+display:flex;
+overflow: visible;
+  /* text-allign: center; */
     overflow: visible;
       stroke: #ff385c;
       fill: #ff385c;

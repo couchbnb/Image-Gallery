@@ -4,21 +4,19 @@ import styles from '../../css/container.module.css';
 import LikeShare from '../LikeShare.jsx';
 
 const Container = styled.div`
- display: flex;
-    /* background-color: grey; */
+    display: flex;
     justify-content: flex-start;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    width: 1303px;
-    flex: 0 1 auto;
+    max-width: 1303px;
+    flex: 1 2;
     min-width: 500px;
     max-height: 540px;
-    min-height: 250px
+    min-height: 100px;
+    overflow: visible;
 
 `;
 
 const Image1 = styled.img`
-
+height:auto;
 border-bottom-left-radius: 15px;
 border-top-left-radius: 15px;
 border-top-right-radius: 0px;
@@ -96,8 +94,8 @@ font-size: 14px !important!;
   width: 140px;
   height:33px;
   -webkit-font-smoothing: antialiased;
-}
-`;
+
+`
 
 class GalleryContainer extends React.Component {
   constructor(props) {
@@ -112,10 +110,7 @@ class GalleryContainer extends React.Component {
     return (
 
       <Container>
-
-        {/* <LikeShare /> */}
-
-        <div className={styles.container1}><Image1 src={data[0]} /></div>
+        <div id="testImheheh" className={styles.container1}><Image1 src={data[0]} /></div>
 
         <div className={styles.container2}>
           <div className={styles.container3}><Image2 src={data[1]} /></div>

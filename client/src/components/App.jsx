@@ -12,14 +12,19 @@ import Modal from './Modal/Modal.jsx';
 const Rug = styled.div`
 height: 71px !important;
 width: 1180px!important;
-display:flex
+display:flex;
 justify-content:center;
 background-image: url("rug.png");
 `;
 
 const GlobalDiv = styled.div`
 
+> di{
+  display:flex;
+  overflow:hidden
+}
 display: grid;
+
 background-color: #ffffff;
 font-family: "Times New Roman", Times, serif;
 position: relative;
@@ -31,6 +36,9 @@ font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue
     background-color: #fff;
     margin: 0;
     -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+
+}
 }
 
 `;
@@ -71,7 +79,11 @@ class App extends React.Component {
 
   getData() {
     // need to refactor here
-    const id = window.location.pathname.match(/(\d+)/)[0];
+    // const id = window.location.pathname.match(/(\d+)/)[0];
+    let urlParams = new URLSearchParams(window.location.search);
+
+    const id = urlParams.get('listing_id')
+    console.log(id, "id")
     axios.get(`/data/${id}`)
       .then((response) => {
         console.log(response.data);
