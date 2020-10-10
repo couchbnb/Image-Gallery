@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   gallery:
-    build: ./image_gallery
+    build: .
     ports:
       - '3061:3061'
     depends_on:
@@ -16,16 +16,9 @@ services:
     command: sh -c 'npm run seed'
     command: sh -c 'npm run startd'
 
-  proxy:
-    build: ./gallery_proxy
-    depends_on:
-      - 'gallery'
-    ports:
-      - '3000:3000'
-    command: sh -c 'npm run startd'
 
 
   mysql:
-    build: ./image_gallery/database
+    build: ./database
     environment:
       MYSQL_ROOT_PASSWORD: student
