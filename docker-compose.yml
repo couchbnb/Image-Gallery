@@ -13,7 +13,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: student
       MYSQL_DB: couchbnb
-    command: sh -c 'npm run seed'
+
     command: sh -c 'npm run startd'
 
 
