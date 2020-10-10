@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  gallery:
+    build: ./image_gallery
+    ports:
+      - '3061:3061'
+    depends_on:
+      - 'mysql'
+    restart: on-failure
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: student
+      MYSQL_DB: couchbnb
+    command: sh -c 'npm run seed'
+    command: sh -c 'npm run startd'
+
+  proxy:
+    build: ./gallery_proxy
+    depends_on:
+      - 'gallery'
+    ports:
+      - '3000:3000'
+    command: sh -c 'npm run startd'
+
+
+  mysql:
+    build: ./image_gallery/database
+    environment:
+      MYSQL_ROOT_PASSWORD: student
