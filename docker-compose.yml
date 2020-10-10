@@ -14,7 +14,7 @@ services:
       MYSQL_PASSWORD: student
       MYSQL_DB: couchbnb
 
-    command: sh -c 'npm run start'
+    command: sh -c 'npm start'
 
 
 

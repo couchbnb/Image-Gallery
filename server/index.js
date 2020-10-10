@@ -16,5 +16,5 @@ app.get('/data/:id', controller.getPageInfo);
 app.patch('/data/update', controller.updateLiked);
 
 app.listen(port, () => {
-  console.log(`Gallery app listening at http://localhost:${port}`);
+  console.log(`Gallery app listening at ${port}`);
 });
