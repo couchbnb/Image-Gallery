@@ -16,4 +16,4 @@ RUN yarn install
 EXPOSE 3061
 
 # How do you start your app?
-CMD [ "npm","run", "startd" ]
+CMD [ "npm", "start" ]
