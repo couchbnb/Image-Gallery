@@ -9,21 +9,21 @@ const GallerySLider = styled.div`
 
 align-items: center!important;
   justify-content: center !important;
-  // -webkit-box-direction: normal !important;
-// -webkit-box-orient: vertical !important;
-// background: rgb(255, 255, 255) !important;
-// position: relative !important;
-// height: 775px !important;
-// max-height: 100% !important;
-// width: 100vw !important;
-// max-width: 100vw !important;
-// display: flex !important;
-// flex-direction: row !important;
-// animation-duration: 400ms !important;
+   -webkit-box-direction: normal !important;
+ -webkit-box-orient: vertical !important;
+ background: rgb(255, 255, 255) !important;
+ position: relative !important;
+ height: 1200px !important;
+ max-height: 100% !important;
+ width: 100vw !important;
+ max-width: 100vw !important;
+ display: flex !important;
+ flex-direction: row !important;
+ animation-duration: 400ms !important;
+ align-items: center;
+ justify-content: center;
 
-// align-items: center;
-// justify-content: center;
-
+z-index: 5;
 `;
 
 
@@ -56,11 +56,11 @@ class GalSlider extends React.Component {
   }
 
   render() {
-    const { images } = this.props;
+    const { images, toggleModal } = this.props;
     const { currentSlide } = this.state;
     return (
       <GallerySLider>
-        <SliderContent images={images} currentSlide={currentSlide} decromentCounter={this.decromentCounter} incromentCounter={this.incromentCounter}/>
+        <SliderContent images={images} toggleModal={toggleModal} currentSlide={currentSlide} decromentCounter={this.decromentCounter} incromentCounter={this.incromentCounter}/>
       </GallerySLider>
     );
   }
