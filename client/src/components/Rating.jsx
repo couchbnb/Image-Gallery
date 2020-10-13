@@ -1,38 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Star = styled.div`
-  display: inline-block !important;
-overflow: visible;
-      stroke: #ff385c;
-      fill: #ff385c;
-      color:#717171;
-      cursor: pointer;
-      font-size: 15px !important;
-      line-height:10px !important;
-      margin: 0px !important!;
-      b{
-        color: black;
 
-        padding-left: 5px
-      }
-      span{
-        margin: 0px !important!;
-      }
-      a{
-        padding-right: 2px;
-      }
-
-      svg{
-        margin: 0px;
-        size: 10px;
-
-      }
-`;
 
 const SuperHostWrapper = styled.div`
 
-display:flex;
+position: relative;
 overflow: visible;
   /* text-allign: center; */
     overflow: visible;
@@ -41,6 +14,13 @@ overflow: visible;
 
   visibility :${(props) => (props.isSuper ? 'hidden' : 'visible')};
 
+  svg{
+    position: sticky;
+      height: 22px;
+      width: 22px;
+      top: 100%;
+      left: 40rh;
+  }
 `;
 
 function Rating({ data }) {
@@ -51,13 +31,8 @@ function Rating({ data }) {
 
   return (
     <div>
-      <Star >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-        <b>{rating}</b>
-        <a>({reviews})</a>
-        <span>.</span>
 
-      </Star>
+      <div>
       <SuperHostWrapper isSuper={isSuper}>
         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="25px" height="25px" viewBox="0 8 75 75">
           <g transform="translate(0.000000,75.000000) scale(0.100000,-0.100000)" >
@@ -68,6 +43,7 @@ function Rating({ data }) {
         <span>Superhost</span>
         <span>.</span>
       </SuperHostWrapper>
+      </div>
     </div>
 
 
@@ -75,3 +51,5 @@ function Rating({ data }) {
 }
 
 export default Rating;
+
+

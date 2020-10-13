@@ -17,12 +17,18 @@ justify-content:center;
 background-image: url("rug.png");
 `;
 
+const Wrapper = styled.div`
+
+position: absolute;
+display: flex;
+overflow: visible;
+flex-shrink: 1 2 auto;
+`
+
+
 const GlobalDiv = styled.div`
 
-> di{
-  display:flex;
-  overflow:hidden
-}
+width: auto;
 display: grid;
 
 background-color: #ffffff;
@@ -80,10 +86,10 @@ class App extends React.Component {
 
   getData() {
     // need to refactor here
-    // const id = window.location.pathname.match(/(\d+)/)[0];
-    let urlParams = new URLSearchParams(window.location.search);
+    const id = window.location.pathname.match(/(\d+)/)[0];
+    // let urlParams = new URLSearchParams(window.location.search);
 
-    const id = urlParams.get('listing_id')
+    // const id = urlParams.get('listing_id')
     console.log(id, "id")
     axios.get(`/data/${id}`)
       .then((response) => {
@@ -141,7 +147,7 @@ class App extends React.Component {
     ) : null;
 
     return (
-
+<Wrapper>
       <GlobalDiv>
 
         <span />
@@ -157,7 +163,7 @@ class App extends React.Component {
         {/* {modal}
         <button onClick={this.toggleModal}> MODAL BUTTON!!!!!!</button> */}
       </GlobalDiv>
-
+      </Wrapper>
     );
   }
 }
