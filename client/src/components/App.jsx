@@ -90,12 +90,12 @@ class App extends React.Component {
   getData() {
     // un comment for development final url path http://localhost:3061/listing/10/
     // const id = window.location.pathname.match(/(\d+)/)[0];
-    //un comment for deployment
+    //un comment for deployment very important
     let urlParams = new URLSearchParams(window.location.search);
      const id = urlParams.get('listing_id');
 
 
-    console.log(id, "id")
+    console.log(id, "id that is hit")
     axios.get(`/data/${id}`)
       .then((response) => {
         console.log(response.data);
