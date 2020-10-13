@@ -5,17 +5,23 @@ import styles from '../../css/model.module.css';
 
 const ImageSlide = styled.img`
   object-fit: contain;
-  justify-content: center;
+
   translate: 0;
   transition: 1;
-  height: auto;
-  width: auto%;
+  height: 750px;
+  max-width: 750px;
+  width: auto;
   top: 50%;
-  align-items: center;
-  justify-content: center;
+  left: 50%;
+  /* align-items: center;
+  justify-content: center; */
+
 
   img[fade='1'] {
+
+    object-fit: fill;
   animation: fade 1s 1;
+
     }
   }
 
@@ -33,14 +39,17 @@ img{
     animation-duration: 2s;
     animation-iteration-count: infinite;
     position:absolute;
-    left:0;
-    right:0;
+
 }
 `;
+const Wrapper = styled.div`
+left:50%;
+top: 50%;
 
+`
 const ImageContainer = styled.div`
 width: 750px;
-height: 700px;
+height:750px;
 justify-content: center;
 
 `;
@@ -81,6 +90,7 @@ border: 1px solid black;
 `;
 
 const Arrows = styled.button`
+z-index: 5;
 font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 font-weight: 450;
 line-height:18px;
@@ -113,7 +123,7 @@ border: 1px solid black;
 `;
 
 function SliderContent({
-  images, currentSlide, decromentCounter, incromentCounter,
+  images, currentSlide, decromentCounter, incromentCounter,toggleModal
 }) {
   const [fade, setFade] = React.useState(0);
 
@@ -121,13 +131,13 @@ function SliderContent({
 
   return (
 
-    <dic>
+    <Wrapper>
       <Arrows direction={false} onClick={decromentCounter}>
         {' '}
         <img src="https://img.icons8.com/ios-glyphs/30/000000/chevron-left.png" />
         {' '}
       </Arrows>
-      <CloseBtn>XCloseme</CloseBtn>
+      <CloseBtn onClick={()=>(toggleModal(event))}>X Close</CloseBtn>
       <DisplayCounter>
         {' '}
         { `${currentSlide} / ${images.length}` }
@@ -144,7 +154,7 @@ function SliderContent({
         {' '}
         <img src="https://img.icons8.com/material/24/000000/chevron-right--v1.png" />
       </Arrows>
-    </dic>
+      </Wrapper>
   );
 }
 

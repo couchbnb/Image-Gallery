@@ -9,11 +9,11 @@ const Wrapper = styled.div`
   `
 
 
-function Gallery({ imageData }) {
+function Gallery({ imageData, toggleModal }) {
   return (
 
     <Wrapper>
-      <GalleryContainer data={imageData} />
+      <GalleryContainer data={imageData} toggleModal={toggleModal}/>
     </Wrapper>
 
   );

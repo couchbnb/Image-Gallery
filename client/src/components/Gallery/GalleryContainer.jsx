@@ -78,7 +78,8 @@ font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue
 
 border: 1px solid black;
   top: 70%;
- right: 10%;
+ right: 10%;+
+ z-index: 5;
 
  span {
 
@@ -106,19 +107,24 @@ class GalleryContainer extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, toggleModal } = this.props;
     return (
 
       <Container>
         <div id="testImheheh" className={styles.container1}><Image1 src={data[0]} /></div>
 
         <div className={styles.container2}>
-          <div className={styles.container3}><Image2 src={data[1]} /></div>
+          <div className={styles.container3}><Image2 src={data[1]} value="1"/></div>
           <div className={styles.container3}><Image3 src={data[2]} /></div>
         </div>
         <div className={styles.container2}>
           <div className={styles.container3}><Image4 src={data[3]} /></div>
-          <div className={styles.container3}><Image5 src={data[4]} /><ShowAllBttn><span>Show all photos</span></ShowAllBttn></div>
+          <div className={styles.container3}><Image5 src={data[4]} />
+
+          <ShowAllBttn  onClick={this.props.toggleModal}>
+            <span>Show all photos</span>
+            </ShowAllBttn>
+            </div>
 
         </div>
 

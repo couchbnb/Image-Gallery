@@ -76,8 +76,11 @@ class App extends React.Component {
     this.submitUpdate = this.submitUpdate.bind(this);
   }
 
-  toggleModal() {
+  toggleModal(event) {
+    event.preventDefault();
     this.setState({ showModal: !this.state.showModal });
+    console.log("toggle happened")
+
   }
 
   componentDidMount() {
@@ -142,7 +145,7 @@ class App extends React.Component {
 
     const modal = this.state.showModal ? (
       <Modal>
-        <GalSlider images={this.state.imageURL} />
+        <GalSlider images={this.state.imageURL} toggleModal={this.toggleModal}/>
       </Modal>
     ) : null;
 
@@ -158,10 +161,9 @@ class App extends React.Component {
 
         <Header data={data} isSuperHost={isSuperHost} updateLike={this.updateLike} />
 
-        <Gallery imageData={this.state.imageURL} />
+        <Gallery imageData={this.state.imageURL} toggleModal={this.toggleModal}/>
 
-        {/* {modal}
-        <button onClick={this.toggleModal}> MODAL BUTTON!!!!!!</button> */}
+        {modal}
       </GlobalDiv>
       </Wrapper>
     );
