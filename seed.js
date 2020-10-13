@@ -1,6 +1,6 @@
 const faker = require('faker');
 const mysql = require('mysql');
-
+// not setting to connect to db for deployment vs development
 const connection = mysql.createConnection({
   host: 'mysql',
   user: 'root',

@@ -88,11 +88,13 @@ class App extends React.Component {
   }
 
   getData() {
-    // need to refactor here
-    const id = window.location.pathname.match(/(\d+)/)[0];
-    // let urlParams = new URLSearchParams(window.location.search);
+    // un comment for development final url path http://localhost:3061/listing/10/
+    // const id = window.location.pathname.match(/(\d+)/)[0];
+    //un comment for deployment
+    let urlParams = new URLSearchParams(window.location.search);
+     const id = urlParams.get('listing_id');
 
-    // const id = urlParams.get('listing_id')
+
     console.log(id, "id")
     axios.get(`/data/${id}`)
       .then((response) => {
