@@ -1,10 +1,11 @@
 const faker = require('faker');
 const mysql = require('mysql');
+
 // not setting to connect to db for deployment vs development
 const connection = mysql.createConnection({
   host: 'mysql',
   user: 'root',
-  password: 'student',
+  password: 'student'
   database: 'couchbnb',
 });
 
@@ -43,7 +44,6 @@ const photoSetGen = function () {
 
   const min = 0;
 
-  copy.forEach((number, index) => {
     const randomNum = Math.floor((Math.random() * (max - min + 1)));
     const current = copy[index];
     const ranInt = copy[randomNum];
