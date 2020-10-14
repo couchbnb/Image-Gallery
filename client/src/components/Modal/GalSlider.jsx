@@ -8,8 +8,8 @@ const GallerySLider = styled.div`
 
 
 align-items: center!important;
-  justify-content: center !important;
-   -webkit-box-direction: normal !important;
+justify-content: center !important;
+-webkit-box-direction: normal !important;
  -webkit-box-orient: vertical !important;
  background: rgb(255, 255, 255) !important;
  position: relative !important;

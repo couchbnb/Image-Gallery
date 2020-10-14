@@ -16,93 +16,86 @@ const Container = styled.div`
 `;
 
 const Image1 = styled.img`
-height:auto;
-border-bottom-left-radius: 15px;
-border-top-left-radius: 15px;
-border-top-right-radius: 0px;
-border-bottom-right-radius: 0x
--webkit-transition: all .5s ease;
-transition: all .5s ease;
-	:hover {
-    -webkit-filter: brightness(78%);
-   filter: brightness(78%);
-	}
+  height:auto;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0x
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+    :hover {
+      -webkit-filter: brightness(78%);
+    filter: brightness(78%);
+    }
 `;
 
 const Image2 = styled.img`
-
-   transition: all .5s ease;
-	:hover {
-    -webkit-filter: brightness(78%);
-   filter: brightness(78%);
-	}
+  transition: all .5s ease;
+	  :hover {
+      -webkit-filter: brightness(78%);
+      filter: brightness(78%);
+	  }
 `;
 
 const Image3 = styled.img`
-
    transition: all .5s ease;
-	:hover {
-    -webkit-filter: brightness(78%);
-   filter: brightness(78%);
-	}
+    :hover {
+      -webkit-filter: brightness(78%);
+    filter: brightness(78%);
+	  }
 `;
 
 const Image4 = styled.img`
 
-border-bottom-left-radius: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 0px;
-transition: all .5s ease;
-	:hover {
-    -webkit-filter: brightness(78%);
-   filter: brightness(78%);
-	}
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 0px;
+  transition: all .5s ease;
+    :hover {
+      -webkit-filter: brightness(78%);
+    filter: brightness(78%);
+    }
 
 `;
 
 const Image5 = styled.img`
-
-border-bottom-left-radius: 0px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-border-bottom-right-radius: 20px;
-transition: all .5s ease;
-	:hover {
-    -webkit-filter: brightness(78%);
-   filter: brightness(78%);
-	}
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 20px;
+  transition: all .5s ease;
+    :hover {
+      -webkit-filter: brightness(78%);
+    filter: brightness(78%);
+    }
 `;
 const ShowAllBttn = styled.button `
-font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
-border: 1px solid black;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  border: 1px solid black;
   top: 70%;
- right: 10%;+
- z-index: 5;
+  right: 10%;
+  z-index: 5;
 
- span {
-
-
-  font-weight: 600;
-line-height:18px;
-font-size: 14px !important!;
-  }
+  span {
+    font-weight: 600;
+    line-height:18px;
+    font-size: 14px !important!;
+    }
 
   cursor: pointer;
-  border-radius: 8px;
-  position: absolute;
-  width: 140px;
-  height:33px;
-  -webkit-font-smoothing: antialiased;
-
+    border-radius: 8px;
+    position: absolute;
+    width: 140px;
+    height:33px;
+    -webkit-font-smoothing: antialiased;
 `
 
 class GalleryContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: [0],
     };
   }
 
@@ -121,10 +114,10 @@ class GalleryContainer extends React.Component {
           <div className={styles.container3}><Image4 src={data[3]} /></div>
           <div className={styles.container3}><Image5 src={data[4]} />
 
-          <ShowAllBttn  onClick={this.props.toggleModal}>
-            <span>Show all photos</span>
+            <ShowAllBttn onClick={this.props.toggleModal}>
+              <span>Show all photos</span>
             </ShowAllBttn>
-            </div>
+          </div>
 
         </div>
 
