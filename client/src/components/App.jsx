@@ -23,8 +23,7 @@ position: absolute;
 display: flex;
 overflow: visible;
 flex-shrink: 1 2 auto;
-`
-
+`;
 
 const GlobalDiv = styled.div`
 
@@ -64,7 +63,7 @@ class App extends React.Component {
         rating: 1,
       }],
       imageURL: [
-        "https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-11.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-8.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-5.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-7.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-0.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-12.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-14.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-4.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-3.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-15.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-6.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-1.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-13.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-2.png","https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-undefined.png"],
+        'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-11.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-8.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-5.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-7.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-0.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-12.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-14.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-4.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-3.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-15.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-6.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-1.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-13.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-2.png', 'https://couchbnb-photo.s3-us-west-1.amazonaws.com/006/6-undefined.png'],
       showModal: false,
       isSuperHost: 0,
       listingId: 0,
@@ -79,8 +78,7 @@ class App extends React.Component {
   toggleModal(event) {
     event.preventDefault();
     this.setState({ showModal: !this.state.showModal });
-    console.log("toggle happened")
-
+    console.log('toggle happened');
   }
 
   componentDidMount() {
@@ -89,13 +87,12 @@ class App extends React.Component {
 
   getData() {
     // un comment for development final url path http://localhost:3061/listing/10/
-    // const id = window.location.pathname.match(/(\d+)/)[0];
-    //un comment for deployment very important
-    let urlParams = new URLSearchParams(window.location.search);
-     const id = urlParams.get('listing_id');
+    const id = window.location.pathname.match(/(\d+)/)[0];
+    // un comment for deployment very important
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const id = urlParams.get('listing_id');
 
-
-    console.log(id, "id that is hit")
+    console.log(id, 'id that is hit');
     axios.get(`/data/${id}`)
       .then((response) => {
         console.log(response.data);
@@ -147,26 +144,21 @@ class App extends React.Component {
 
     const modal = this.state.showModal ? (
       <Modal>
-        <GalSlider images={this.state.imageURL} toggleModal={this.toggleModal}/>
+        <GalSlider images={this.state.imageURL} toggleModal={this.toggleModal} />
       </Modal>
     ) : null;
 
     return (
-<Wrapper>
-      <GlobalDiv>
-
-        <span />
-        <div>
-          {' '}
-          <Rug />
-        </div>
-
-        <Header data={data} isSuperHost={isSuperHost} updateLike={this.updateLike} />
-
-        <Gallery imageData={this.state.imageURL} toggleModal={this.toggleModal}/>
-
-        {modal}
-      </GlobalDiv>
+      <Wrapper>
+        <GlobalDiv>
+          <span />
+          <div>
+            <Rug />
+          </div>
+          <Header data={data} isSuperHost={isSuperHost} updateLike={this.updateLike} />
+          <Gallery imageData={this.state.imageURL} toggleModal={this.toggleModal} />
+          {modal}
+        </GlobalDiv>
       </Wrapper>
     );
   }

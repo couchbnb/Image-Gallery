@@ -3,17 +3,14 @@ import styles from '../../css/model.module.css';
 import styled from 'styled-components';
 
 const Arrows = styled.button `
-font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-font-weight: 450;
-line-height:18px;
-border: 1px solid black;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-weight: 450;
+  line-height:18px;
+  border: 1px solid black;
   top: 5%;
- left: 5%;
-
-
+  left: 5%;
   font-size: 14px;
   padding: 7px 15px;
-
   cursor: pointer;
   border-radius: 50%;
   position: absolute;
