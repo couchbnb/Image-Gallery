@@ -1,5 +1,5 @@
 
-CouchBNB Gallery
+CouchStay Gallery
 
 This is a Gallery APP meant to showcase images for a rental real estate listing.
 The project is developed on React using Styled components,and CSS-modules.
