@@ -26,16 +26,15 @@ padding: 0 !important!;
 const Star = styled.div`
 grid-area: star;
 
-      cursor: pointer;
-      position: relative;
-      overflow: visible;
-      stroke: #ff385c;
-      fill: #ff385c;
-      align: center;
-      font-size: 14px !important;
-      padding-bottom: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  stroke: #ff385c;
+  fill: #ff385c;
+  align: center;
+  font-size: 14px !important;
+  padding-bottom: 5px;
       /* line-height:15px !important; */
-
     img{
       position: sticky;
       height: 15px;
@@ -43,36 +42,33 @@ grid-area: star;
       top: 50%;
       left: 40rh;
         }
-
 `;
 
 const Location = styled.div`
-
-cursor: pointer;
-position: auto;
-grid-area: location;
-text-decoration: underline;
-top:100%;
+  cursor: pointer;
+  position: auto;
+  grid-area: location;
+  text-decoration: underline;
+  top:100%;
 `;
+
 const LikeWrapper = styled.div`
-display: flex;
-align-items: center;
-grid-area: likeShare;
+  display: flex;
+  align-items: center;
+  grid-area: likeShare;
 
 `;
 const HeaderWrapper = styled.div`
-position: relative;
-width: 1280px;
-display: inline-grid;
-overflow: visible!important!;
-flex-wrap: nowrap;
-align-items: center;
-
-margin:16px;
-
-grid-gap:0px;
-grid-template-columns: 100px 100px 250px auto auto auto 200px;
-grid-template-rows:  50px 25px;
+  position: relative;
+  width: 1280px;
+  display: inline-grid;
+  overflow: visible!important!;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin:16px;
+  grid-gap:0px;
+  grid-template-columns: 100px 100px 250px auto auto auto 200px;
+  grid-template-rows:  50px 25px;
   grid-template-areas:   " title title title title . . . "
                         " star rating  location location . . likeShare ";
 
@@ -102,18 +98,12 @@ function Header({ data, updateLike, isSuperHost }) {
 
         <Star data={reviews}>
           <div>
-
             <img src="star.png" />
             <b>{rating}</b>
-            {' '}
-
             {(`(${reviews || ''})`)}
-
             <div>{}</div>
-
           </div>
         </Star>
-
         <RatingWrapper data={location}>
           <Rating data={data} />
         </RatingWrapper>

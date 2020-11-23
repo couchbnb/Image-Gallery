@@ -3,9 +3,10 @@ const mysql = require('mysql');
 
 // not setting to connect to db for deployment vs development
 const connection = mysql.createConnection({
-  host: 'mysql',
+  // host: 'mysql',
+  host: 'localhost',
   user: 'root',
-  password: 'student',
+  // password: 'student',
   database: 'couchbnb',
 });
 
@@ -65,7 +66,7 @@ const ratingGen = function () {
 // seeding function takes in "seed" as an argument for the number of amount of records created.
 const seeder = (seed) => {
   for (let i = 0; i < seed; i += 1) {
-    const param = [null, description(), ratingGen(), faker.random.number({ min: 1, max: 150 }), faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 6 }), photoSetGen()];
+    const param = [null, description(), ratingGen(), faker.random.number({ min: 1, max: 150 }), faker.random.number(1), faker.random.number(2), address(), faker.random.number({ min: 1, max: 3 }), photoSetGen()];
 
     connection.query('INSERT INTO gallery VALUES (?,?,?,?,?,?,?,?,?)', param, (err, sucsess) => {
       if (err) {

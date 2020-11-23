@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styles from '../../css/model.module.css';
 import styled from 'styled-components';
+import styles from '../../css/model.module.css';
 
-const Arrows = styled.button `
+const Arrows = styled.button`
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-weight: 450;
   line-height:18px;
@@ -18,33 +18,25 @@ const Arrows = styled.button `
   height: 100px;
   -webkit-font-smoothing: antialiased;
 }
-`
-
+`;
 
 function Arrow({ direction }) {
-
-
   let arrowDirection;
   if (direction) {
-    <Arrows> hi </Arrows>
-
+    <Arrows> hi </Arrows>;
   } else {
-    <Arrows> hello </Arrows>
+    <Arrows> hello </Arrows>;
   }
 
-  return(
-    <div >
-    {arrowDirection}
+  return (
+    <div>
+      {arrowDirection}
     </div>
-  )
+  );
 }
 export default Arrow;
 
-
-
-
 // function Arrow({ direction }) {
-
 
 //   let arrowDirection;
 //   if (direction) {

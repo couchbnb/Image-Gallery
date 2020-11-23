@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 // make changes for deployment change local host to mysql, and add password.
 const connection = mysql.createConnection({
-  // host: 'localhost',
-  host: 'mysql',
+  host: 'localhost',
+  // host: 'mysql',
   user: 'root',
-  password: 'student',
+  // password: 'student',
 
   database: 'couchbnb',
 
